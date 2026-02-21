@@ -52,11 +52,17 @@ Route::prefix('admin')->middleware(['auth','verified'])->group(function(){
     Route::get('/teachers/index', [adminController::class, 'teacherEdit'])->name('admin.teachers.index');
 });
 
+<<<<<<< HEAD
 
 // Public dashboard route
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+=======
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+>>>>>>> 11e90928a6a85c17c259bd28f2d043b28eb04ac2
 
 Route::middleware('auth')->group(function () {
 
